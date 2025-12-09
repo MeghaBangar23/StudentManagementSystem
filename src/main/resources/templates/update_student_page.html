@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            width: 400px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #495057;
+        }
+
+        input, select, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+            font-size: 14px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Update Student Details Here</h1>
+        <form th:action="@{/stud/{id} (id=${stu.id})}" th:object="${stu}" method="post">
+        
+        
+            <label>Name</label>
+            <input type="text" th:field="*{name}">
+
+            <label>Email</label>
+            <input type="text" th:field="*{email}">
+
+            <label>Course</label>
+            <input type="text" th:field="*{course}">
+
+            <div>
+                <label>Trainer</label>
+                <select th:field="*{trainer}">
+                    <option th:each="trainer : ${AllTrainer}" th:value="${trainer}" th:text="${trainer.name}"></option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

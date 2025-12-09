@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+        <h1>Add New Trainer Here...</h1>
+        <form action="/saveTrainer" th:object="${trainer}" method="post">
+            <label>Name</label>
+            <input type="text" th:field="*{name}">
+             <br>
+            <label>Profile</label>
+            <input type="text" th:field="*{profile}">
+             <br>
+            <label>Exprience</label>
+            <input type="text" th:field="*{exprience}">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+</body>
+</html>
+   
+   
+    
+

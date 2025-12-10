@@ -1,4 +1,4 @@
-[8:47 am, 10/12/2025] megha: # Student Management System
+ Student Management System
 
 A complete Student Management System built using *Spring Boot, **Spring MVC, and **Spring Data JPA*.  
 This application allows Admins and Trainers to manage Students, Trainers, and related operations through a web interface.
